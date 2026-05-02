@@ -19,7 +19,13 @@ const app = express();
 
 app.use(helmet());
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://secure-vault-66m9.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/", generalLimiter);
