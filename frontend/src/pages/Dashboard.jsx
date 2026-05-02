@@ -8,7 +8,7 @@ import UploadModal from "../components/UploadModal";
 import { FiUpload, FiFolder, FiShield, FiHardDrive } from "react-icons/fi";
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const {} = useAuth();
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showUpload, setShowUpload] = useState(false);
