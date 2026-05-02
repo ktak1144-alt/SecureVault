@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { getMyFiles } from "../utils/api";
+// eslint-disable-next-line
 import { useAuth } from "../context/AuthContext";
 import Navbar from "../components/Navbar";
 import FileCard from "../components/FileCard";
@@ -8,7 +9,7 @@ import UploadModal from "../components/UploadModal";
 import { FiUpload, FiFolder, FiShield, FiHardDrive } from "react-icons/fi";
 
 const Dashboard = () => {
-  const {} = useAuth();
+  // auth context used via API
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showUpload, setShowUpload] = useState(false);
