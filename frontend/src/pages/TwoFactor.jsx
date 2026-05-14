@@ -15,10 +15,10 @@ const TwoFactor = () => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1);
 
-  const API = axios.create({
-    baseURL: "http://localhost:5000/api",
-    headers: { Authorization: `Bearer ${token}` }
-  });
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api",
+  headers: { Authorization: `Bearer ${token}` }
+});
 
   useEffect(() => {
     fetch2FAStatus();
