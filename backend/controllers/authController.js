@@ -99,13 +99,13 @@ await createLog({
   status: "SUCCESS"
 });
 
-// Send login notification email
-await sendLoginNotification({
+// Send login notification email (non-blocking)
+sendLoginNotification({
   name: user.name,
   email: user.email,
   ipAddress: ip,
   userAgent: req.headers["user-agent"]
-});
+}).catch(err => console.error("Email error:", err.message));
 
     res.status(200).json({
       message: " Login successful!",
